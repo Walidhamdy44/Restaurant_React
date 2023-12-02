@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Container } from "react-bootstrap";
+import NavBar from "./components/NavBar";
+import Heading from "./components/Heading";
+import BodyEl from "./components/BodyEl";
+import { items } from "./data";
+import { useState } from "react";
 function App() {
+  const [itemsData, setItemsData] = useState(items);
+  // filter data
+  const filterbyCatagury = (cat) => {
+    if (cat === "الكل") {
+      setItemsData(items);
+    } else {
+      const newArr = items.filter((item) => item.catagury === cat);
+      setItemsData(newArr);
+    }
+  };
+  //
+  // Search on data >
+  const filterbySearch = (word) => {
+    if (word !== "") {
+      const newArr = items.filter((item) => item.title === word);
+      setItemsData(newArr);
+    } else {
+      window.alert("jj");
+    }
+  };
+  //
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar filterbySearch={filterbySearch} />
+      <Container>
+        <Heading filterbyCatagury={filterbyCatagury} />
+        <BodyEl itemsData={itemsData} />
+      </Container>
     </div>
   );
 }

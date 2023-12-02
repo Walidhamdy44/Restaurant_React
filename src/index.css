@@ -1,13 +1,125 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Almarai", sans-serif !important;
+  box-sizing: border-box;
+  background-color: #9e9e9e1f !important;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+  list-style: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+/* start navbar */
+.navbar {
+  background-color: #333;
+}
+.navbar .Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  color: #ff9b09;
+  cursor: pointer;
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.search input {
+  height: 35px;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  color: #ff9900;
+}
+.search Button {
+  color: #ff9b09;
+  transition: 0.4s;
+}
+.search Button:hover {
+  color: #ff9900;
+  background-color: #5b5353;
+}
+/* start Heading */
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin: 20px;
+}
+.heading h2 {
+  color: #5f3c08;
+  padding: 0px 5px 10px;
+  font-weight: bold;
+  border-bottom: 3px solid #df8e15;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btns Button {
+  color: #ff9b09;
+}
+/* start body  */
+.box {
+  display: flex;
+  gap: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+@media (max-width: 767px) {
+  .box {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.box img {
+  max-width: 100%;
+  border-radius: 10px;
+  transition: 0.4s;
+  width: 150px;
+}
+.img {
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 10px;
+}
+.box img:hover {
+  transform: scale(1.3);
+}
+.box .info {
+  padding: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .box .info {
+    margin-top: 0;
+  }
+}
+.info .price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.price span:first-of-type {
+  color: #333;
+  font-weight: bold;
+}
+.price span:last-of-type {
+  color: #ff9b09;
+  font-weight: bold;
+}
+.text p {
+  color: #777;
 }
